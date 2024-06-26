@@ -1,0 +1,66 @@
+
+// USER //
+GET http://localhost:5000/user
+###
+GET http://localhost:5000/user/1
+###
+POST  http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "email" : "adijati1029@gmail.com",
+    "fullname" : "Restu Adi Wahyujati",
+    "username" : "wahyujatirestu",
+    "password" : "Admin123@",
+    "confPassword" : "Admin123@",
+    "gender" : "Male"
+}
+###
+PATCH http://localhost:5000/user/1
+Content-Type: application/json
+
+{
+     "email" : "adijati1029@gmail.com",
+    "fullname" : "Restu Adi Wahyujati",
+    "username" : "wahyujatirestu",
+    "password" : "admin123",
+    "confPassword" : "admin123",
+    "gender" : "Male"
+}
+###
+DELETE http://localhost:5000/user/2
+
+
+
+
+
+
+// AUTHENTIKASI USER //
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "adijati1029@gmail.com",
+    "password" : "Admin123@"
+}
+###
+GET http://localhost:5000/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhNTA1ZjE0LTIzNWYtNDlhMC1hM2RmLTI0OTZjNTMxYWU4MCIsImZ1bGxuYW1lIjoiUmVzdHUgQWRpIFdhaHl1amF0aSIsInVzZXJuYW1lIjoid2FoeXVqYXRpcmVzdHUiLCJlbWFpbCI6ImFkaWphdGkxMDI5QGdtYWlsLmNvbSIsImlhdCI6MTcxOTM4MjM2NCwiZXhwIjoxNzE5MzgzMjY0fQ.iRMwqLA7pFiH6ywj_lKFjfxYukS04weDemkco4IagBw
+###
+DELETE http://localhost:5000/logout
+
+
+###
+GET  http://localhost:5000/token
+
+
+
+//message
+###
+POST http://localhost:5000/messages/fa505f14-235f-49a0-a3df-2496c531ae80
+Content-Type: application/json
+
+{
+    "message" : "hallo ini restu"
+}
